@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Agregar Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px #888888;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulario para Agregar Productos</h1>
+        <form action="/api/products" method="POST" enctype="multipart/form-data">
+            <label for="title">Título del Producto:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="code">Código del Producto:</label>
+            <input type="text" id="code" name="code" required>
+
+            <label for="category">Categoría de Producto:</label>
+            <input type="text" id="category" name="category" required>
+
+            <label for="stock">Stock Disponible:</label>
+            <input type="number" id="stock" name="stock" required>
+
+            <label for="status">Estado:</label>
+            <select id="status" name="status" required>
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select>
+
+            <label for="thumbnails">Imágenes del Producto (Puede seleccionar múltiples archivos):</label>
+            <input type="file" id="thumbnails" name="thumbnails" accept="image/*" multiple required>
+            <button type="submit">Agregar Producto</button>
+        </form>
+    </div>
+</body>
+
+</html>
